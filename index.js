@@ -3,10 +3,11 @@ const axios = require('axios');
 const bodyParser = require('body-parser');
 require('dotenv').config();
 
+const app = express();
 app.use(bodyParser.json());
 
 // Configuration
-const app = express();
+
 const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN ;
 const MESSENGER_PAGE_TOKEN = process.env.MESSENGER_PAGE_TOKEN;
 const MESSENGER_PAGE_ID = process.env.MESSENGER_PAGE_ID;
