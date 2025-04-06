@@ -1,5 +1,5 @@
 const telegramConfig = {
-  apiToken: 'YOUR_TELEGRAM_BOT_TOKEN',
+  apiToken: '7418986006:AAG8NOkbpqLmtePil_MsIJkWFgUAzbBUkmg',
   channelId: '@YourChannelName', // معرف القناة التي سيستمع لها البوت
-  serverEndpoint: 'https://your-server.com/upload-video'
+  serverEndpoint: 'https://telesenger.onrender.com/upload-video'
 };
