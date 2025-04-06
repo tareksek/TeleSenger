@@ -7,7 +7,7 @@ const path = require('path');
 const TELEGRAM_TOKEN = process.env.TELEGRAM_TOKEN;
 const FB_PAGE_TOKEN = process.env.FB_PAGE_TOKEN;
 const FB_PSID = process.env.FB_PSID;
-
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 const bot = new TelegramBot(TELEGRAM_TOKEN, { polling: true });
 
 bot.on('video', async (msg) => {
