@@ -5,10 +5,10 @@ const path = require('path');
 
 // إعدادات بوت المسنجر
 const messengerConfig = {
-  accessToken: 'YOUR_FACEBOOK_PAGE_ACCESS_TOKEN',
-  appSecret: 'YOUR_FACEBOOK_APP_SECRET',
-  verifyToken: 'YOUR_VERIFY_TOKEN',
-  serverUrl: 'https://your-server.com' // عنوان السيرفر المركزي
+  accessToken: 'EAAJJCSmd2wYBO8uNdz6uB9YFqZA9SQFrekP7NhXwf3WkzhjhuczU6HZA7WSTaR9sXZAuiTpOfYnEJ98Bs6LbNgCsbddCrdAzt8xVycoKZC8JGHZCmEXpPZBpE9UWvztE26cSWfgzTZCP3lPLGQnHQHuDaVOTftVWe1UpZCrhA9HzZB0xphzdHouKqcXE0xMQr7H2XTgZDZD',
+  appSecret: '5a086d1aba59227282b692b42bff1962',
+  verifyToken: 'Ka9@8AnP%02&AUq#81£',
+  serverUrl: 'https://telesenger.onrender.com' // عنوان السيرفر المركزي
 };
 
 // إنشاء عميل مسنجر
