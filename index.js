@@ -7,12 +7,12 @@ const app = express();
 app.use(bodyParser.json());
 
 // Configuration
-const TELEGRAM_BOT_TOKEN.process.env;
-const MESSENGER_PAGE_TOKEN.process.env;
-const MESSENGER_PAGE_ID.process.env;
-const ESSENGER_APP_SECRET.process.env;
-const ERVER_URL.process.env;
-const VERIFY_TOKEN.process.env;
+const TELEGRAM_BOT_TOKEN = process.env.TELEGRAM_BOT_TOKEN ;
+const MESSENGER_PAGE_TOKEN = process.env.MESSENGER_PAGE_TOKEN;
+const MESSENGER_PAGE_ID = process.env.MESSENGER_PAGE_ID;
+const MESSENGER_APP_SECRET = process.env.MESSENGER_APP_SECRET;
+const SERVER_URL = process.env.SERVER_URL;
+const VERIFY_TOKEN = process.env.VERIFY_TOKEN;
 // Handle Telegram Webhook
 app.post('/webhook/telegram', async (req, res) => {
   try {
