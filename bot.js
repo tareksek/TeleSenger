@@ -6,9 +6,9 @@ const CloudConvert = require('cloudconvert');
 const fs = require('fs');
 const path = require('path');
 
-const bot = new Telegraf(process.env.BOT_TOKEN);
+const BOT_TOKEN = process.env.BOT_TOKEN;
 const CHANNEL_ID = process.env.CHANNEL_ID;
-const cloudConvert = new CloudConvert(process.env.CLOUDCONVERT_API_KEY);
+const CLOUDCONVERT = process.env.CLOUDCONVERT_API_KEY;
 
 bot.on('video', async (ctx) => {
   try {
