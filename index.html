@@ -1,0 +1,67 @@
+
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+  <meta charset="UTF-8">
+  <title>مولد البحوث الأكاديمية</title>
+</head>
+<body>
+  <h1>إعداد بحث أكاديمي</h1>
+  <form id="researchForm">
+    <input name="title" placeholder="عنوان البحث" required><br>
+    <input name="author" placeholder="اسم الباحث"><br>
+    <input name="field" placeholder="المجال"><br>
+    <select name="language">
+      <option value="ar">العربية</option>
+      <option value="fr">الفرنسية</option>
+      <option value="en">الإنجليزية</option>
+    </select><br>
+    <select name="type">
+      <option>رسالة ماجستير</option>
+      <option>مقال علمي</option>
+      <option>بحث جامعي</option>
+    </select><br>
+    <textarea name="objectives" placeholder="الأهداف"></textarea><br>
+    <textarea name="hypotheses" placeholder="الفرضيات / التساؤلات"></textarea><br>
+    <select name="citation">
+      <option>APA</option>
+      <option>MLA</option>
+      <option>Chicago</option>
+    </select><br>
+    <textarea name="sources" placeholder="المصادر التي يجب اعتمادها"></textarea><br>
+
+    <button type="submit">توليد وتحميل البحث</button>
+  </form>
+
+  <script>
+    document.getElementById('researchForm').addEventListener('submit', async function(e) {
+      e.preventDefault();
+
+      const form = e.target;
+      const formData = new FormData(form);
+      const data = {};
+      formData.forEach((value, key) => data[key] = value);
+
+      try {
+        const response = await fetch('http://localhost:3000/generate', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) throw new Error('فشل في توليد البحث.');
+
+        const blob = await response.blob();
+        const url = window.URL.createObjectURL(blob);
+        const a = document.createElement('a');
+        a.href = url;
+        a.download = data.title + ".docx";
+        a.click();
+        window.URL.revokeObjectURL(url);
+      } catch (err) {
+        alert('حدث خطأ: ' + err.message);
+      }
+    });
+  </script>
+</body>
+</html>
